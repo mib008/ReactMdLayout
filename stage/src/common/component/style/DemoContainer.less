@@ -1,0 +1,38 @@
+.DemoContainer {
+    margin-bottom: 30px;
+
+    section.DemoSection {
+        background-color: #eeeeee;
+
+        .DemoHead {
+            padding: 10px;
+        }
+
+        .CodeWrap {
+            background-color: white;
+            overflow: hidden;
+            transition: height linear 0.2s;
+
+            &.expand-true {
+                max-height: 480px;
+            }
+
+            &.expand-false {
+                height: 0;
+            }
+
+            .TabContainer {
+                overflow: auto;
+            }
+
+            Button {
+                text-transform: none;
+            }
+        }
+
+        .DemoBody {
+            margin-top: 10px;
+            padding: 10px;
+        }
+    }
+}

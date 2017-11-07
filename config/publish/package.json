@@ -1,0 +1,19 @@
+{
+    "name": "ReactMdLayout",
+    "version": "0.1.0",
+    "description": "Material Design layout framework for React",
+    "main": "ReactMdLayout.js",
+    "author":
+    {
+        "name": "mib008",
+        "email": "mib008@126.com"
+    },
+    "license": "MIT",
+    "dependencies":
+    {
+        "angular-material": "^1.1.5",
+        "create-react-class": "^15.6.2",
+        "prop-types": "^15.6.0",
+        "react": "^16.0.0"
+    }
+}
