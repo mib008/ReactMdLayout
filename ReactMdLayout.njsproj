@@ -47,14 +47,6 @@
     <Folder Include="stage\src\module\2_LayoutRow\style\" />
     <Folder Include="stage\src\module\3_LayoutContainer\style\" />
     <Folder Include="stage\src\module\Button\style\" />
-    <Folder Include="stage\src\module\Counter\" />
-    <Folder Include="stage\src\module\Counter\components\" />
-    <Folder Include="stage\src\module\Counter\containers\" />
-    <Folder Include="stage\src\module\Counter\modules\" />
-    <Folder Include="stage\src\module\Elapse\" />
-    <Folder Include="stage\src\module\Elapse\components\" />
-    <Folder Include="stage\src\module\Elapse\containers\" />
-    <Folder Include="stage\src\module\Elapse\modules\" />
     <Folder Include="stage\src\module\Home\" />
     <Folder Include="stage\src\module\Home\assets\" />
     <Folder Include="stage\src\module\Home\components\" />
@@ -63,12 +55,6 @@
     <Folder Include="stage\src\module\PageNotFound\" />
     <Folder Include="stage\src\module\PageNotFound\assets\" />
     <Folder Include="stage\src\module\PageNotFound\components\" />
-    <Folder Include="stage\src\module\Route\" />
-    <Folder Include="stage\src\module\Route\components\" />
-    <Folder Include="stage\src\module\Zen\" />
-    <Folder Include="stage\src\module\Zen\components\" />
-    <Folder Include="stage\src\module\Zen\containers\" />
-    <Folder Include="stage\src\module\Zen\modules\" />
     <Folder Include="stage\src\static\" />
     <Folder Include="stage\src\store\" />
   </ItemGroup>
@@ -90,7 +76,6 @@
     <Content Include="stage\src\module\Home\components\HomeView.scss" />
     <Content Include="stage\src\module\PageNotFound\assets\404.jpg" />
     <Content Include="stage\src\module\PageNotFound\components\PageNotFound.scss" />
-    <Content Include="stage\src\module\Zen\components\Zen.scss" />
     <Content Include="stage\src\static\favicon.ico" />
     <Content Include="stage\src\static\humans.txt" />
     <Content Include="stage\src\static\robots.txt" />
@@ -131,15 +116,7 @@
     <Compile Include="stage\src\module\Button\Button.js" />
     <Compile Include="stage\src\module\Button\index.js" />
     <Compile Include="stage\src\module\Button\style\Button.less" />
-    <Compile Include="stage\src\module\Counter\components\Counter.js" />
-    <Compile Include="stage\src\module\Counter\containers\CounterContainer.js" />
-    <Compile Include="stage\src\module\Counter\index.js" />
-    <Compile Include="stage\src\module\Counter\modules\counter.js" />
     <Compile Include="stage\src\common\component\DemoPage.js" />
-    <Compile Include="stage\src\module\Elapse\components\Elapse.js" />
-    <Compile Include="stage\src\module\Elapse\containers\ElapseContainer.js" />
-    <Compile Include="stage\src\module\Elapse\index.js" />
-    <Compile Include="stage\src\module\Elapse\modules\elapse.js" />
     <Compile Include="stage\src\module\Home\components\HomeDemo2.js" />
     <Compile Include="stage\src\module\Home\components\HomeDemo1.js" />
     <Compile Include="stage\src\module\Home\components\HomeView - Copy.js" />
@@ -149,12 +126,6 @@
     <Compile Include="stage\src\module\PageNotFound\components\PageNotFound.js" />
     <Compile Include="stage\src\module\PageNotFound\index.js" />
     <Compile Include="stage\src\module\PageNotFound\redirect.js" />
-    <Compile Include="stage\src\module\Route\components\Route.js" />
-    <Compile Include="stage\src\module\Route\index.js" />
-    <Compile Include="stage\src\module\Zen\components\Zen.js" />
-    <Compile Include="stage\src\module\Zen\containers\ZenContainer.js" />
-    <Compile Include="stage\src\module\Zen\index.js" />
-    <Compile Include="stage\src\module\Zen\modules\zen.js" />
     <Compile Include="stage\src\store\createStore.js" />
     <Compile Include="stage\src\store\location.js" />
     <Compile Include="stage\src\store\reducers.js" />
