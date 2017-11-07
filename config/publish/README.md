@@ -2,11 +2,11 @@
 
 由[angular-material](https://material.angularjs.org/latest/)移植而来，用于[React](https://reactjs.org/)的布局框架。
 
-因为之前由使用过angular-material的UI库开发，认为其中所提供的flex伸缩盒布局框架非常优秀，于是决定将其移植到React下。
+因为之前有使用过angular-material的UI库开发，认为其中所提供的flex伸缩盒布局框架非常优秀，于是决定将其移植到React下。
 
 ## 为什么要使用布局框架？
-css3的flex相关属性这里不再赘述，需要快去查阅请前往[MDN -> CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
-查阅。
+css3的flex相关属性这里不再赘述，需要查阅请前往[MDN -> CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
+。
 
 对于页面繁多的web程序或站点，基本样式与布局样式的分离对于后期维护的成本控制十分重要，统一的布局实现也能有效提高代码质量。
 

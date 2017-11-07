@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './style/StagePage.less';
 
 /**
- * 
+ * @class
  */
 class StagePage extends Component {
     static propTypes = {

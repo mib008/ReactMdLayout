@@ -5,9 +5,9 @@ import StagePage from 'Common/component/StagePage';
 
 
 /**
- * 
+ * Button
  */
-class RoutePage extends Component {
+class Page extends Component {
     /**
      * @return {dom}
      */
@@ -20,4 +20,4 @@ class RoutePage extends Component {
     }
 }
 
-export default RoutePage;
+export default Page;

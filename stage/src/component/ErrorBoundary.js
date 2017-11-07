@@ -9,9 +9,10 @@ class ErrorBoundary extends Component {
     static propTypes = {
         children: PropTypes.any,
     };
+
     /**
-     * 
      * @param {any} props
+     * @constructor
      */
     constructor(props) {
         super(props);
@@ -19,7 +20,7 @@ class ErrorBoundary extends Component {
     }
 
     /**
-     * 
+     * componentDidCatch
      * @param {any} error
      * @param {any} info
      */

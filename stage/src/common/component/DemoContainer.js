@@ -13,7 +13,7 @@ const onClickIconButton = Symbol('onClickIconButton');
 const onChangeIndexTab = Symbol('onChangeIndexTab');
 
 /**
- *  
+ * @class
  */
 class DemoContainer extends Component {
     static propTypes = {
@@ -25,7 +25,7 @@ class DemoContainer extends Component {
     };
 
     /**
-     * 
+     * @constructor
      */
     constructor() {
         super();
@@ -41,7 +41,7 @@ class DemoContainer extends Component {
     }
 
     /**
-     * 
+     * componentWillMount
      */
     componentWillMount() {
         // let Component = componentMap.get(this.props.component);
@@ -49,7 +49,7 @@ class DemoContainer extends Component {
     }
 
     /**
-     * 
+     * componentDidUpdate
      * @param {any} prevProps
      * @param {any} prevState
      */

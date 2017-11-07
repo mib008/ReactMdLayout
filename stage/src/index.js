@@ -2,19 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RedBoxReact from 'redbox-react';
 
-import createStore from './store/createStore';
 import AppContainer from './component/AppContainer';
 
 import './common/style/baseStyle.less';
 
-const initialState = window.___INITIAL_STATE__;
-const store = createStore(initialState);
 const MOUNT_NODE = document.getElementById('root');
 
 
 let render = () => {
     ReactDOM.render(
-        <AppContainer store={store} />,
+        <AppContainer />,
         MOUNT_NODE
     );
 };

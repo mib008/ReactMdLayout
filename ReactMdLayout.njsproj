@@ -19,8 +19,6 @@
     <Folder Include="build\" />
     <Folder Include="config\" />
     <Folder Include="config\publish\" />
-    <Folder Include="config\webpack\" />
-    <Folder Include="config\webpack\prod\" />
     <Folder Include="MdLayout\" />
     <Folder Include="MdLayout\LayoutRow\" />
     <Folder Include="MdLayout\LayoutColumn\" />
@@ -55,11 +53,8 @@
     <Folder Include="stage\src\module\PageNotFound\" />
     <Folder Include="stage\src\module\PageNotFound\assets\" />
     <Folder Include="stage\src\module\PageNotFound\components\" />
-    <Folder Include="stage\src\static\" />
-    <Folder Include="stage\src\store\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\webpack\prod\index.html" />
     <Content Include="stage\src\common\component\style\DemoContainer.less" />
     <Content Include="stage\src\common\component\style\StagePage.less" />
     <Content Include="stage\src\common\defaultTheme.json" />
@@ -76,19 +71,12 @@
     <Content Include="stage\src\module\Home\components\HomeView.scss" />
     <Content Include="stage\src\module\PageNotFound\assets\404.jpg" />
     <Content Include="stage\src\module\PageNotFound\components\PageNotFound.scss" />
-    <Content Include="stage\src\static\favicon.ico" />
-    <Content Include="stage\src\static\humans.txt" />
-    <Content Include="stage\src\static\robots.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="config\webpack.publish.js" />
     <Compile Include="config\webpack.build.js" />
     <Compile Include="config\webpack.common.js" />
     <Compile Include="config\webpack.dev.js" />
-    <Compile Include="config\webpack\config.common.js" />
-    <Compile Include="config\webpack\config.dev.js" />
-    <Compile Include="config\webpack\config.prod.js" />
-    <Compile Include="config\webpack\paths.js" />
     <Compile Include="MdLayout\BaseLayout.js" />
     <Compile Include="MdLayout\index.js" />
     <Compile Include="MdLayout\LayoutColumn\index.js" />
@@ -126,9 +114,6 @@
     <Compile Include="stage\src\module\PageNotFound\components\PageNotFound.js" />
     <Compile Include="stage\src\module\PageNotFound\index.js" />
     <Compile Include="stage\src\module\PageNotFound\redirect.js" />
-    <Compile Include="stage\src\store\createStore.js" />
-    <Compile Include="stage\src\store\location.js" />
-    <Compile Include="stage\src\store\reducers.js" />
     <Compile Include="postcss.config.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

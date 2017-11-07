@@ -5,7 +5,7 @@ import BaseLayout from '../BaseLayout';
 const renderChildren = Symbol('renderChildren');
 
 /**
- *  
+ * @class
  */
 class Layout extends BaseLayout {
     static propTypes = {

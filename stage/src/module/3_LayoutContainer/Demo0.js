@@ -4,7 +4,7 @@ import { LayoutContainer } from 'MdLayout';
 import 'style-loader!css-loader!postcss-loader!less-loader!./style/Demo0.less';
 
 /**
- * 
+ * @class
  */
 class Demo0 extends Component {
     /**

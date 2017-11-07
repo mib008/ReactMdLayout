@@ -15,7 +15,7 @@ const ALIGNMENT_MAIN_AXIS = ['', 'start', 'center', 'end', 'stretch', 'space-aro
 const ALIGNMENT_CROSS_AXIS = ['', 'start', 'center', 'end', 'stretch'];
 
 /**
- *  
+ * @class
  */
 class BaseLayout extends Component {
     static propTypes = {
@@ -24,7 +24,7 @@ class BaseLayout extends Component {
     };
 
     /**
-     * 
+     * @constructor
      * @param {any} layoutType
      */
     constructor(layoutType) {
@@ -89,11 +89,11 @@ class BaseLayout extends Component {
     }
 
     /**
-     * 
      * @param {any} item
      * @param {any} list
      * @param {any} replaceWith
      * @return {boolean}
+     * @private
      */
     [findIn](item, list, replaceWith) {
         item = replaceWith && item ? item.replace(WHITESPACE, replaceWith) : item;
@@ -109,9 +109,9 @@ class BaseLayout extends Component {
     }
 
     /**
-     * 
      * @param {any} attrValue
      * @return {array}
+     * @private
      */
     [extractAlignAxis](attrValue) {
         let axis = {
@@ -143,10 +143,10 @@ class BaseLayout extends Component {
     }
 
     /**
-     * 
      * @param {any} props
      * @param {function} filter
      * @return {string} className
+     * @private
      */
     [translateClassName](props, filter) {
         let layoutAttributes = Object.entries(props)

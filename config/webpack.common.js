@@ -109,12 +109,7 @@ module.exports = function makeWebpackConfig() {
     config.externals = {
         'react': 'React',
         'react-dom': 'ReactDOM',
-        'react-redux': 'ReactRedux',
         'react-router': 'ReactRouter',
-
-        'redux': 'Redux',
-        'redux-saga': 'ReduxSaga',
-        'redux-thunk': 'ReduxThunk',
     };
 
     /**

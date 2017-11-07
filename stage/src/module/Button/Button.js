@@ -17,7 +17,6 @@ import './style/Button.less';
 // };
 
 /**
- * 
  * @param {any} props
  * @return {dom}
  */

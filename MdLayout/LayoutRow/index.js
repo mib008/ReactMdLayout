@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import BaseLayout from '../BaseLayout';
 
 /**
- *  
+ * @class
  */
 class LayoutRow extends BaseLayout {
     static propTypes = {
@@ -13,7 +13,7 @@ class LayoutRow extends BaseLayout {
     };
 
     /**
-     * 
+     * @constructor
      */
     constructor() {
         super('layout-row');

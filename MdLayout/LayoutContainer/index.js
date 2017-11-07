@@ -5,7 +5,7 @@ const renderChildren = Symbol('renderChildren');
 const renderDom = Symbol('renderDom');
 
 /**
- * 
+ * @class
  */
 class LayoutContainer extends BaseLayout {
     /**
@@ -24,10 +24,10 @@ class LayoutContainer extends BaseLayout {
     }
 
     /**
-     * 
      * @param {any} dom
      * @param {int} key
      * @return {dom} children
+     * @private
      */
     [renderDom](dom, key) {
         let className = dom.className ? dom.className.concat(' ', this.buildClass(dom)) : this.buildClass(dom);

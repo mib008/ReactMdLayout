@@ -7,7 +7,7 @@ import StagePage from 'Common/component/StagePage';
 import DemoContainer from 'Common/component/DemoContainer';
 
 /**
- * 
+ * @class
  */
 class DemoPage extends Component {
     static propTypes = {
@@ -15,7 +15,7 @@ class DemoPage extends Component {
     };
 
     /**
-     * 
+     * componentWillMount
      */
     componentWillMount() {
         if (this.props && this.props.location) {
@@ -24,7 +24,6 @@ class DemoPage extends Component {
     }
 
     /**
-     * 
      * @param {any} componentKey
      * @return {dom}
      */

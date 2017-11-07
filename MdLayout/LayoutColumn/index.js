@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 /**
- *  
+ * @class
  */
 class LayoutColumn extends Component {
     static propTypes = {
