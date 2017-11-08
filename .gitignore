@@ -3,6 +3,7 @@
 *.log.*
 
 node_modules
+*.bundle.js.map
 
 .idea/
 /.vs/ReactMdLayout/v15/.suo
