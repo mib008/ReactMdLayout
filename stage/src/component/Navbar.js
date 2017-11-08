@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import List, { ListItem, ListItemText } from 'material-ui/List';
+import packageJson from 'package.json';
 
 // import { withStyles } from 'material-ui/styles';
 // import { withTheme } from 'material-ui/styles';
@@ -35,8 +36,9 @@ class Navbar extends Component {
         return (
             <div className={classes.root}>
                 <List>
-                    <ListItem>
+                    <ListItem className='layout-column'>
                         <h3>ReactMdLayout</h3>
+                        <h4>version:{packageJson.version}</h4>
                     </ListItem>
 
                     {itemSource.map((module) =>

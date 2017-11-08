@@ -3,7 +3,7 @@
 import Home from './Home';
 import About from './About';
 
-import Button from './Button';
+// import Button from './Button';
 
 import DemoPage from 'Common/component/DemoPage';
 
@@ -104,10 +104,10 @@ const createRoutes = (store) => {
     return [
         // divider row
         { key: 0 },
-        { path: '/', name: 'Home', component: Home, exact: true },
+        { path: '/', name: 'Home', component: Home, exact: true, strict: true },
         { path: '/about', name: 'About', component: About },
         { key: 1 },
-        { path: '/button', name: 'Button', component: Button },
+        // { path: '/button', name: 'Button', component: Button },
         // { path: '/layout_column', name: 'Layout Column', component: LayoutColumn },
         // { path: '/layout_row', name: 'Layout Row', component: LayoutRow },
         // { path: '/Layout', name: 'Layout', component: Layout },

@@ -103,6 +103,8 @@ module.exports = function makeWebpackConfig() {
             // 'material-ui': 'material-ui-alpha/build',
             'material-ui': 'material-ui-build-next/build',
             // 'material-ui/styles': 'material-ui-alpha/styles',
+
+            'package.json': path.resolve('package.json'),
         }
     };
 

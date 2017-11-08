@@ -60,8 +60,8 @@ class AppContainer extends Component {
 
                             {modules.filter((module) => module.name).map((module) => {
                                 return module.exact ?
-                                    <Route key={module.name} exact path={module.path} component={module.component} />
-                                    : <Route key={module.name} path={module.path} component={module.component} />;
+                                    <Route key={module.name} exact strict path={module.path} component={module.component} />
+                                    : <Route key={module.name} exact strict path={module.path} component={module.component} />;
                             })}
                         </div>
                     </BrowserRouter>

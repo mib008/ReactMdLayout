@@ -10,15 +10,25 @@ const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const BASE_CSS_LOADER = [
     'style-loader',
-    'css-loader',
-    'postcss-loader',
+    {
+        loader: 'css-loader',
+        options: {
+            sourceMap: true,
+        },
+    },
+    {
+        loader: 'postcss-loader',
+        options: {
+            path: path.resolve('postcss.config.js')
+        }
+    },
 ];
 
 /**
@@ -36,17 +46,17 @@ module.exports = function (options) {
 
     return webpackMerge(commonConfig(), {
 
-        module: {
-            rules: [{
-                test: /\.less$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader?sourceMap', use: [...BASE_CSS_LOADER, 'less-loader']
-                })
-            }, {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({ fallback: 'style-loader?sourceMap', use: BASE_CSS_LOADER })
-            }]
-        },
+        //module: {
+        //    rules: [{
+        //        test: /\.less$/,
+        //        use: ExtractTextPlugin.extract({
+        //            fallback: 'style-loader?sourceMap', use: [...BASE_CSS_LOADER, 'less-loader']
+        //        })
+        //    }, {
+        //        test: /\.css$/,
+        //        use: ExtractTextPlugin.extract({ fallback: 'style-loader?sourceMap', use: BASE_CSS_LOADER })
+        //    }]
+        //},
 
         /**
        * Entry
@@ -57,7 +67,7 @@ module.exports = function (options) {
         entry: {
             app: [
                 'babel-polyfill',
-                './src/index.js'
+                './stage/src/index.js',
             ]
         },
 
@@ -140,14 +150,32 @@ module.exports = function (options) {
             // Reference: https://github.com/kevlened/copy-webpack-plugin
             new CopyWebpackPlugin(
                 [
-                    'react', 'react-dom', 'react-router', 'create-react-class'
+                    'react', 'react-dom', 'react-router', 'create-react-class', 'angular-material'
                 ].map(item => {
                     return {
                         from: path.join(__dirname, '../node_modules/', item),
-                        force: true,
                         to: path.join(outputPath, item)
                     };
-                })
+                }).concat(
+                    [
+                        'prettify.css', 'google-code-prettify',
+                    ].map(item => {
+                        return {
+                            from: path.join(__dirname, '../stage/lib/', item),
+                            force: true,
+                            to: path.join(outputPath, item)
+                        };
+                    })
+                    ).concat(
+                    [
+                        'favourite.png'
+                    ].map(item => {
+                        return {
+                            from: path.join(__dirname, '../config/release/', item),
+                            force: true,
+                            to: path.join(outputPath, item)
+                        };
+                    }))
             ),
         ]
 

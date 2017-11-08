@@ -16,8 +16,9 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Folder Include="build\" />
+    <Folder Include="dist\" />
     <Folder Include="config\" />
+    <Folder Include="config\dist\" />
     <Folder Include="config\publish\" />
     <Folder Include="MdLayout\" />
     <Folder Include="MdLayout\LayoutRow\" />
@@ -83,6 +84,7 @@
     <Compile Include="MdLayout\LayoutContainer\index.js" />
     <Compile Include="MdLayout\LayoutRow\index.js" />
     <Compile Include="MdLayout\Layout\index.js" />
+    <Compile Include="server.js" />
     <Compile Include="stage\src\common\component\DemoContainer.js" />
     <Compile Include="stage\src\common\defaultTheme.js" />
     <Compile Include="stage\src\component\ErrorBoundary.js" />
