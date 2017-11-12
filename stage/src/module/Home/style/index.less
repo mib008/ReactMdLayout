@@ -3,16 +3,28 @@
 .Home {
     min-height: 0;
     flex: 1;
-    justify-content: center;
+    padding: 8px;
 
     .react-logo {
         height: 200px;
         width: 200px;
     }
 
-    h1 {
-    }
+    section {
+        > pre.prettyprint {
+            margin: 10px 10%;
+        }
 
-    h2 {
+        table {
+            width: 100%;
+
+            a {
+                margin: 3px;
+
+                &:hover {
+                    font-weight: 600;
+                }
+            }
+        }
     }
 }

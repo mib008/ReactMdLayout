@@ -12,9 +12,7 @@ class Demo0 extends Component {
      */
     render() {
         return <LayoutContainer>
-            <div
-                className='LayoutContainerDemo0'
-                layout='row' layout-align='start stretch'>
+            <div className='LayoutContainerDemo0' layout='row' layout-align='start stretch'>
                 <div flex='' className='block1'>block1</div>
                 <div className='block2'>block2</div>
                 <div className='block3'>block3</div>

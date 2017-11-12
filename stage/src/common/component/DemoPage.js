@@ -20,6 +20,10 @@ class DemoPage extends Component {
     componentWillMount() {
         if (this.props && this.props.location) {
             this.navState = this.props.location.state;
+
+            if (!this.navState) {
+                this.navState = window.history.state;
+            }
         }
     }
 
@@ -44,14 +48,16 @@ class DemoPage extends Component {
             <div><h1>{this.navState.name}</h1></div>
             <div><h3>{this.navState.description}</h3></div>
             {
-                this.navState.demos.map((demo) =>
-                    <DemoContainer
-                        key={demo.name}
-                        title={demo.name}
-                        description={demo.description}
-                        code={demo.code}>
-                        {this.getComponentInstance(demo.component)}
-                    </DemoContainer>)
+                this.navState.demos ?
+                    this.navState.demos.map((demo) =>
+                        <DemoContainer
+                            key={demo.name}
+                            title={demo.name}
+                            description={demo.description}
+                            code={demo.code}>
+                            {this.getComponentInstance(demo.component)}
+                        </DemoContainer>) :
+                    <h1></h1>
             }
         </StagePage>;
     }

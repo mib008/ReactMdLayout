@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider } from 'material-ui/styles';
 // import { withStyles } from 'material-ui/styles';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import IconButton from 'material-ui/IconButton';
+
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import ErrorBoundary from './ErrorBoundary';
 import Navbar from './Navbar';
 import RouterDefines from '../module';
-import defaultTheme from '../common/defaultTheme';
+import defaultTheme from 'Common/defaultTheme';
+import Github from 'Common/svg/Github';
 
 import './style/AppContainer.less';
 
@@ -22,9 +27,10 @@ class AppContainer extends Component {
 
     /**
      * @constructor
+     * @param {obj} props
      */
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         if (module.hot) {
             module.hot.accept([
@@ -55,14 +61,25 @@ class AppContainer extends Component {
             <ErrorBoundary>
                 <MuiThemeProvider theme={defaultTheme}>
                     <BrowserRouter>
-                        <div className="AppContainer">
+                        <div className='AppContainer layout-row layout-align-start stretch'>
                             <Navbar classes={classes} itemSource={modules}></Navbar>
 
-                            {modules.filter((module) => module.name).map((module) => {
-                                return module.exact ?
-                                    <Route key={module.name} exact strict path={module.path} component={module.component} />
-                                    : <Route key={module.name} exact strict path={module.path} component={module.component} />;
-                            })}
+                            <div className='layout-column flex'>
+                                <AppBar position="static" color="default">
+                                    <Toolbar>
+                                        <div className='flex' />
+                                        <IconButton className='icon' color="contrast" aria-label="Github" target="_blank" href='https://github.com/mib008/ReactMdLayout'>
+                                            <Github height={36} width={36} />
+                                        </IconButton>
+                                    </Toolbar>
+                                </AppBar>
+
+                                {modules.filter((module) => module.name).map((module) => {
+                                    return module.exact ?
+                                        <Route key={module.name} exact strict path={module.path} component={module.component} />
+                                        : <Route key={module.name} exact strict path={module.path} component={module.component} />;
+                                })}
+                            </div>
                         </div>
                     </BrowserRouter>
                 </MuiThemeProvider>

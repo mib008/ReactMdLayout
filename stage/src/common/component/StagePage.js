@@ -14,7 +14,7 @@ class StagePage extends Component {
      * @return {dom}
      */
     render() {
-        return <article className='StagePage layout-column'>
+        return <article className='StagePage layout-column flex'>
             {this.props.children}
         </article>;
     }

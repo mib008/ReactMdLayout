@@ -35,7 +35,7 @@ angular-material.layouts.ie_fixes.css这个是为了IE浏览器的兼容，按�
 
 或者需要整个angular-material的一些比如字体，normalize的规则，可以引入包含所有内容的css（之前三个不用重复引用了，一般用到其他UI库开发的话并不需要这个集合包）
 ```bash
-    <!-- 不需要重复引用
+    <!-- angular-material.css包含所有样式，不需要重复引用
         <link href="angular-material/layouts/angular-material.layout-attributes.css" rel="stylesheet" />
         <link href="angular-material/layouts/angular-material.layouts.css" rel="stylesheet" />
         <link href="angular-material/layouts/angular-material.layouts.ie_fixes.css" rel="stylesheet" />
@@ -44,6 +44,6 @@ angular-material.layouts.ie_fixes.css这个是为了IE浏览器的兼容，按�
     <link href="angular-material/angular-material.css" rel="stylesheet" />
 ```
 
-## Document
+## Document Site
 
-
+http://reactmdlayout.chinacloudsites.cn/

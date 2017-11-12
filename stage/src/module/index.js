@@ -58,6 +58,28 @@ import DemoPage from 'Common/component/DemoPage';
 
 let pageList = [
     {
+        name: 'Layout Class',
+        description: '直接通过编写class名的方式，应用封装在对应class名中的布局规则。',
+        path: '/layout_class',
+        demos: [{
+            name: 'Row layout demo',
+            description: '使用Layout Class实现LayoutRow中的Demo。',
+            component: '3_LayoutContainer.Demo0',
+            code: [
+                { name: 'Demo0.js', type: 'js', content: require('raw-loader!./0_LayoutClass/Demo0.js') },
+                { name: 'Demo0.less', type: 'less', content: require('raw-loader!./0_LayoutClass/style/Demo0.less') },
+            ],
+        }, {
+            name: 'Mix layout demo',
+            description: '使用Layout Class实现纵向以及横向的混合布局。',
+            component: '3_LayoutContainer.Demo1',
+            code: [
+                { name: 'Demo1.js', type: 'js', content: require('raw-loader!./0_LayoutClass/Demo1.js') },
+                { name: 'Demo1.less', type: 'less', content: require('raw-loader!./0_LayoutClass/style/Demo1.less') },
+            ],
+        }],
+    },
+    {
         name: 'Layout',
         description: 'Layout控件，通过布局属性转译为class布局样式，转译只影响一级子元素。',
         path: '/layout',
@@ -72,7 +94,7 @@ let pageList = [
         }],
     }, {
         name: 'Layout Container',
-        description: 'Layout Container控件，通过布局属性转译为class布局样式，转译所有子元素。',
+        description: 'Layout Container控件，容器下面的所有子元素会通过指定的属性设置应用对应的布局规则。通过布局属性转译为class布局样式，转译所有子元素。',
         path: '/layout_container',
         demos: [{
             name: 'Row layout demo',

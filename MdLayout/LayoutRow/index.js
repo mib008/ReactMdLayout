@@ -14,9 +14,10 @@ class LayoutRow extends BaseLayout {
 
     /**
      * @constructor
+     * @param {obj} props
      */
-    constructor() {
-        super('layout-row');
+    constructor(props) {
+        super(props, 'layout-row');
     }
 
     /**

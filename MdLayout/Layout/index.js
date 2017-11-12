@@ -14,9 +14,10 @@ class Layout extends BaseLayout {
 
     /**
      * @constructor
+     * @param {obj} props
      */
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.$$typeof = Symbol.for('react.element');
     }

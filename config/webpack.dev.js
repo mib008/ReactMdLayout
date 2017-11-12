@@ -59,6 +59,7 @@ module.exports = function (options) {
             inline: true,
             hot: true,
             port: port,
+            historyApiFallback: true,
         },
 
         /**

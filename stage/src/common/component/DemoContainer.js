@@ -26,9 +26,10 @@ class DemoContainer extends Component {
 
     /**
      * @constructor
+     * @param {obj} props
      */
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             expand: false,

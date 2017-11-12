@@ -17,6 +17,8 @@ import Divider from 'material-ui/Divider';
 
 import './style/Navbar.less';
 
+const buildState = Symbol('buildState');
+
 /**
  * Navbar
  */
@@ -25,6 +27,31 @@ class Navbar extends Component {
         classes: PropTypes.object.isRequired,
         itemSource: PropTypes.array,
     };
+
+    /**
+     * buildState
+     * @param {obj} page
+     * @return {obj}
+     */
+    [buildState](page) {
+        return {
+            name: page.name,
+            description: page.description,
+            path: page.path,
+            demos: page.demos,
+        };
+    }
+
+    /**
+     * componentWillMount
+     */
+    componentWillMount() {
+        this.props.itemSource.forEach((page) => {
+            if (page.demos && page.path === window.location.pathname) {
+                window.history.pushState(this[buildState](page), page.name, page.path);
+            }
+        });
+    }
 
     /**
      * render
@@ -45,12 +72,7 @@ class Navbar extends Component {
                         module.name ?
                             <NavLink to={{
                                 pathname: module.path,
-                                state: {
-                                    name: module.name,
-                                    description: module.description,
-                                    path: module.path,
-                                    demos: module.demos,
-                                },
+                                state: this[buildState](module),
                             }} key={module.name} activeStyle={{ color: 'white' }}>
                                 <ListItem button><ListItemText primary={module.name}></ListItemText></ListItem>
                             </NavLink> :

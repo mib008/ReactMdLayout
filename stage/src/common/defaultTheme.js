@@ -8,4 +8,6 @@ theme.palette.getContrastText = (color) => color;
 
 theme.breakpoints = createBreakpoints(theme.breakpoints);
 
+theme.mixins.gutters = (object) => object;
+
 export default theme;

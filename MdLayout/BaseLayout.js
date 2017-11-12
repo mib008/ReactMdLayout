@@ -25,10 +25,11 @@ class BaseLayout extends Component {
 
     /**
      * @constructor
-     * @param {any} layoutType
+     * @param {any} props
+     * @param {string} layoutType
      */
-    constructor(layoutType) {
-        super();
+    constructor(props, layoutType) {
+        super(props);
         this.layoutType = layoutType;
     }
 
