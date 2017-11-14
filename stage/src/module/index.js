@@ -3,7 +3,7 @@
 import Home from './Home';
 import About from './About';
 
-// import Button from './Button';
+import Button from './Button';
 
 import DemoPage from 'Common/component/DemoPage';
 
@@ -58,13 +58,16 @@ import DemoPage from 'Common/component/DemoPage';
 
 let pageList = [
     {
+        name: 'Css Classes',
+        type: 'subheader',
+    }, {
         name: 'Layout Class',
         description: '直接通过编写class名的方式，应用封装在对应class名中的布局规则。',
         path: '/layout_class',
         demos: [{
             name: 'Row layout demo',
             description: '使用Layout Class实现LayoutRow中的Demo。',
-            component: '3_LayoutContainer.Demo0',
+            component: '0_LayoutClass.Demo0',
             code: [
                 { name: 'Demo0.js', type: 'js', content: require('raw-loader!./0_LayoutClass/Demo0.js') },
                 { name: 'Demo0.less', type: 'less', content: require('raw-loader!./0_LayoutClass/style/Demo0.less') },
@@ -72,14 +75,16 @@ let pageList = [
         }, {
             name: 'Mix layout demo',
             description: '使用Layout Class实现纵向以及横向的混合布局。',
-            component: '3_LayoutContainer.Demo1',
+            component: '0_LayoutClass.Demo1',
             code: [
                 { name: 'Demo1.js', type: 'js', content: require('raw-loader!./0_LayoutClass/Demo1.js') },
                 { name: 'Demo1.less', type: 'less', content: require('raw-loader!./0_LayoutClass/style/Demo1.less') },
             ],
         }],
-    },
-    {
+    }, {
+        name: 'Components',
+        type: 'subheader',
+    }, {
         name: 'Layout',
         description: 'Layout控件，通过布局属性转译为class布局样式，转译只影响一级子元素。',
         path: '/layout',
@@ -92,6 +97,9 @@ let pageList = [
                 { name: 'Demo0.less', type: 'less', content: require('raw-loader!./0_Layout/style/Demo0.less') },
             ],
         }],
+    }, {
+        name: 'Container',
+        type: 'subheader',
     }, {
         name: 'Layout Container',
         description: 'Layout Container控件，容器下面的所有子元素会通过指定的属性设置应用对应的布局规则。通过布局属性转译为class布局样式，转译所有子元素。',
@@ -118,6 +126,8 @@ let pageList = [
 
 let componentMap = new Map([
     ['0_Layout.Demo0', require('babel-loader!./0_Layout/Demo0.js').default],
+    ['0_LayoutClass.Demo0', require('babel-loader!./0_LayoutClass/Demo0.js').default],
+    ['0_LayoutClass.Demo1', require('babel-loader!./0_LayoutClass/Demo1.js').default],
     ['3_LayoutContainer.Demo0', require('babel-loader!./3_LayoutContainer/Demo0.js').default],
     ['3_LayoutContainer.Demo1', require('babel-loader!./3_LayoutContainer/Demo1.js').default],
 ]);
@@ -125,17 +135,17 @@ let componentMap = new Map([
 const createRoutes = (store) => {
     return [
         // divider row
-        { key: 0 },
+        { key: 0, type: 'divider' },
         { path: '/', name: 'Home', component: Home, exact: true, strict: true },
         { path: '/about', name: 'About', component: About },
-        { key: 1 },
-        // { path: '/button', name: 'Button', component: Button },
+        { key: 1, type: 'divider' },
+        { path: '/button', name: 'Button', component: Button },
         // { path: '/layout_column', name: 'Layout Column', component: LayoutColumn },
         // { path: '/layout_row', name: 'Layout Row', component: LayoutRow },
         // { path: '/Layout', name: 'Layout', component: Layout },
         // { path: '/LayoutContainer', name: 'Layout Container', component: LayoutContainer },
         ...(pageList.map((page) => {
-            page.component = DemoPage;
+            if (!page.type) page.component = DemoPage;
             return page;
         })),
     ];

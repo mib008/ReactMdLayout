@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+// import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import { componentMap } from '../../module';
 
-import StagePage from 'Common/component/StagePage';
-import DemoContainer from 'Common/component/DemoContainer';
+// import StagePage from 'Common/component/StagePage';
+// import DemoContainer from 'Common/component/DemoContainer';
 
 /**
  * @class
@@ -15,9 +16,18 @@ class DemoPage extends Component {
     };
 
     /**
+     * @param {object} props
+     */
+    constructor(props) {
+        super(props);
+    }
+
+    /**
      * componentWillMount
      */
     componentWillMount() {
+        console.debug('DemoPage will mount');
+
         if (this.props && this.props.location) {
             this.navState = this.props.location.state;
 
@@ -28,38 +38,53 @@ class DemoPage extends Component {
     }
 
     /**
-     * @param {any} componentKey
+     * @param {any} demo
      * @return {dom}
      */
-    getComponentInstance(componentKey) {
-        let Component = componentMap.get(componentKey);
+    getComponentInstance(demo) {
+        let DemoComponent = componentMap.get(demo.component);
         if (!Component) {
-            return <h1>{`DemoPage.getComponentInstance: no component found for key: ${componentKey}`}</h1>;
+            return <h1>{`DemoPage.getComponentInstance: no component found for key: ${demo.component}`}</h1>;
         }
-        let demoComponent = new Component();
-        return demoComponent.render();
+        return <DemoComponent {...demo} />;
     }
+
+    // /**
+    //  * @return {dom}
+    //  */
+    // render() {
+    //     return <StagePage>
+    //         <div><h1>{this.navState.name}</h1></div>
+    //         <div><h3>{this.navState.description}</h3></div>
+    //         {
+    //             this.navState.demos ?
+    //                 this.navState.demos.map((demo) =>
+    //                     <DemoContainer
+    //                         key={demo.name}
+    //                         title={demo.name}
+    //                         description={demo.description}
+    //                         code={demo.code}>
+    //                         {this.getComponentInstance(demo.component)}
+    //                     </DemoContainer>) :
+    //                 <h1></h1>
+    //         }
+    //     </StagePage>;
+    // }
 
     /**
      * @return {dom}
      */
     render() {
-        return <StagePage>
+        return <article className='DemoPage layout-column flex'>
             <div><h1>{this.navState.name}</h1></div>
             <div><h3>{this.navState.description}</h3></div>
             {
                 this.navState.demos ?
                     this.navState.demos.map((demo) =>
-                        <DemoContainer
-                            key={demo.name}
-                            title={demo.name}
-                            description={demo.description}
-                            code={demo.code}>
-                            {this.getComponentInstance(demo.component)}
-                        </DemoContainer>) :
+                        <div key={demo.name}>{this.getComponentInstance(demo)}</div>) :
                     <h1></h1>
             }
-        </StagePage>;
+        </article>;
     }
 }
 

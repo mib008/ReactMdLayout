@@ -1,8 +1,9 @@
 {
-  "presets": ["env", "react", "stage-0"], 
+  "presets": ["env", "react", "stage-0"],
   "sourceMaps": true,
-  "plugins": [ 
-    "react-hot-loader/babel", 
-    ["transform-class-properties", { "loose": true }] 
-  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-decorators-legacy",
+    ["transform-class-properties", { "loose": true }]
+  ]
  }

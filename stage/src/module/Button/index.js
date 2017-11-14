@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 import Button from './Button';
-import StagePage from 'Common/component/StagePage';
+import DemoPage from 'Common/component/DemoPage';
+
+import MyComponent from './HocDemo';
 
 
 /**
@@ -14,9 +16,10 @@ class Page extends Component {
     render() {
         const classes = { button: 'button_demo' };
 
-        return <StagePage>
+        return <DemoPage>
             <Button classes={classes}></Button>
-        </StagePage>;
+            <MyComponent/>
+        </DemoPage>;
     }
 }
 

@@ -11,14 +11,14 @@
         .CodeWrap {
             background-color: white;
             overflow: hidden;
-            transition: height linear 0.2s;
+            transition: max-height linear 0.2s;
 
             &.expand-true {
                 max-height: 480px;
             }
 
             &.expand-false {
-                height: 0;
+                max-height: 0px;
             }
 
             .TabContainer {

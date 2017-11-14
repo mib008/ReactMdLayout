@@ -8,6 +8,7 @@ import packageJson from 'package.json';
 
 // import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import ListSubheader from 'material-ui/List/ListSubheader';
 
 // import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 // import List from 'material-ui/List';
@@ -27,6 +28,13 @@ class Navbar extends Component {
         classes: PropTypes.object.isRequired,
         itemSource: PropTypes.array,
     };
+
+    /**
+     * @param {any} props
+     */
+    constructor(props) {
+        super(props);
+    }
 
     /**
      * buildState
@@ -68,16 +76,21 @@ class Navbar extends Component {
                         <h4>version:{packageJson.version}</h4>
                     </ListItem>
 
-                    {itemSource.map((module) =>
-                        module.name ?
-                            <NavLink to={{
-                                pathname: module.path,
-                                state: this[buildState](module),
-                            }} key={module.name} activeStyle={{ color: 'white' }}>
-                                <ListItem button><ListItemText primary={module.name}></ListItemText></ListItem>
-                            </NavLink> :
-                            <Divider key={module.key} />
-                    )}
+                    {itemSource.map((module) => {
+                        switch (module.type) {
+                            case 'divider':
+                                return <Divider key={module.key} />;
+                            case 'subheader':
+                                return <ListSubheader className='ListSubheader' key={module.name}>{module.name}</ListSubheader>;
+                            default:
+                                return <NavLink to={{
+                                    pathname: module.path,
+                                    state: this[buildState](module),
+                                }} key={module.name} activeStyle={{ color: 'white' }}>
+                                    <ListItem button><ListItemText primary={module.name}></ListItemText></ListItem>
+                                </NavLink>;
+                        }
+                    })}
                 </List>
             </div>
         );
