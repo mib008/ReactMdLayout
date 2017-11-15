@@ -16,7 +16,7 @@ class Page extends Component {
     render() {
         const classes = { button: 'button_demo' };
 
-        return <DemoPage>
+        return <DemoPage {...this.props}>
             <Button classes={classes}></Button>
             <MyComponent/>
         </DemoPage>;

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { componentMap } from '../../module';
 
+import './style/DemoPage.less';
+
 // import StagePage from 'Common/component/StagePage';
 // import DemoContainer from 'Common/component/DemoContainer';
 
@@ -13,6 +15,7 @@ import { componentMap } from '../../module';
 class DemoPage extends Component {
     static propTypes = {
         location: PropTypes.any,
+        children: PropTypes.any,
     };
 
     /**
@@ -28,7 +31,7 @@ class DemoPage extends Component {
     componentWillMount() {
         console.debug('DemoPage will mount');
 
-        if (this.props && this.props.location) {
+        if (this.props.location) {
             this.navState = this.props.location.state;
 
             if (!this.navState) {
@@ -43,46 +46,24 @@ class DemoPage extends Component {
      */
     getComponentInstance(demo) {
         let DemoComponent = componentMap.get(demo.component);
-        if (!Component) {
+        if (!DemoComponent) {
             return <h1>{`DemoPage.getComponentInstance: no component found for key: ${demo.component}`}</h1>;
         }
         return <DemoComponent {...demo} />;
     }
 
-    // /**
-    //  * @return {dom}
-    //  */
-    // render() {
-    //     return <StagePage>
-    //         <div><h1>{this.navState.name}</h1></div>
-    //         <div><h3>{this.navState.description}</h3></div>
-    //         {
-    //             this.navState.demos ?
-    //                 this.navState.demos.map((demo) =>
-    //                     <DemoContainer
-    //                         key={demo.name}
-    //                         title={demo.name}
-    //                         description={demo.description}
-    //                         code={demo.code}>
-    //                         {this.getComponentInstance(demo.component)}
-    //                     </DemoContainer>) :
-    //                 <h1></h1>
-    //         }
-    //     </StagePage>;
-    // }
-
     /**
      * @return {dom}
      */
     render() {
-        return <article className='DemoPage layout-column flex'>
+        return <article className='DemoPage layout-column flex layout-padding'>
             <div><h1>{this.navState.name}</h1></div>
             <div><h3>{this.navState.description}</h3></div>
             {
                 this.navState.demos ?
                     this.navState.demos.map((demo) =>
                         <div key={demo.name}>{this.getComponentInstance(demo)}</div>) :
-                    <h1></h1>
+                    this.props.children
             }
         </article>;
     }

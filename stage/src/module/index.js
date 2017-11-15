@@ -1,60 +1,7 @@
-// We only need to import the modules necessary for initial render
-// import CoreLayout from '../layouts/CoreLayout';
 import Home from './Home';
 import About from './About';
 
-import Button from './Button';
-
 import DemoPage from 'Common/component/DemoPage';
-
-// import Layout from './0_Layout';
-// import LayoutColumn from './1_LayoutColumn';
-// import LayoutRow from './2_LayoutRow';
-// import LayoutContainer from './3_LayoutContainer';
-
-// import counterRoute from './Counter';
-// import zenRoute from './Zen';
-// import elapseRoute from './Elapse';
-// import routeRoute from './Route';
-// import pageNotFound from './PageNotFound';
-// import redirect from './PageNotFound/redirect';
-
-/*  Note: Instead of using JSX, we recommend using react-router
-    PlainRoute objects to build route definitions.   */
-
-// export const createRoutes = (store) => ({
-//    path: '/',
-//    component: CoreLayout,
-//    indexRoute: Home,
-//    childRoutes: [
-//        counterRoute(store),
-//        zenRoute(store),
-//        elapseRoute(store),
-//        routeRoute(store),
-//        pageNotFound(),
-//        redirect,
-//    ],
-// });
-
-/*  Note: childRoutes can be chunked or otherwise loaded programmatically
-    using getChildRoutes with the following signature:
-
-    getChildRoutes (location, cb) {
-      require.ensure([], (require) => {
-        cb(null, [
-          // Remove imports!
-          require('./Counter').default(store)
-        ])
-      })
-    }
-
-    However, this is not necessary for code-splitting! It simply provides
-    an API for async route definitions. Your code splitting should occur
-    inside the route `getComponent` function, since it is only invoked
-    when the route exists and matches.
-*/
-
-// export default createRoutes;
 
 let pageList = [
     {
@@ -65,6 +12,14 @@ let pageList = [
         description: '直接通过编写class名的方式，应用封装在对应class名中的布局规则。',
         path: '/layout_class',
         demos: [{
+            name: 'layout-margin and layout-padding',
+            description: '使用layout-margin或layout-padding className为元素设置统一的margin或者padding，默认为8px，可以另写样式覆盖。',
+            component: '0_LayoutClass.DemoPaddingMargin',
+            code: [
+                { name: 'DemoPaddingMargin.js', type: 'js', content: require('raw-loader!./0_LayoutClass/DemoPaddingMargin.js') },
+                { name: 'DemoPaddingMargin.less', type: 'less', content: require('raw-loader!./0_LayoutClass/style/DemoPaddingMargin.less') },
+            ],
+        }, {
             name: 'Row layout demo',
             description: '使用Layout Class实现LayoutRow中的Demo。',
             component: '0_LayoutClass.Demo0',
@@ -128,6 +83,7 @@ let componentMap = new Map([
     ['0_Layout.Demo0', require('babel-loader!./0_Layout/Demo0.js').default],
     ['0_LayoutClass.Demo0', require('babel-loader!./0_LayoutClass/Demo0.js').default],
     ['0_LayoutClass.Demo1', require('babel-loader!./0_LayoutClass/Demo1.js').default],
+    ['0_LayoutClass.DemoPaddingMargin', require('babel-loader!./0_LayoutClass/DemoPaddingMargin.js').default],
     ['3_LayoutContainer.Demo0', require('babel-loader!./3_LayoutContainer/Demo0.js').default],
     ['3_LayoutContainer.Demo1', require('babel-loader!./3_LayoutContainer/Demo1.js').default],
 ]);
@@ -139,7 +95,7 @@ const createRoutes = (store) => {
         { path: '/', name: 'Home', component: Home, exact: true, strict: true },
         { path: '/about', name: 'About', component: About },
         { key: 1, type: 'divider' },
-        { path: '/button', name: 'Button', component: Button },
+        { path: '/button', name: 'Button', component: require('babel-loader!./Button').default, description: '仅用于测试的页面' },
         // { path: '/layout_column', name: 'Layout Column', component: LayoutColumn },
         // { path: '/layout_row', name: 'Layout Row', component: LayoutRow },
         // { path: '/Layout', name: 'Layout', component: Layout },
