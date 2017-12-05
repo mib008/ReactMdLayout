@@ -1,15 +1,15 @@
 import React from 'react';
-import { LayoutRow } from 'MdLayout';
+import { LayoutColumn } from 'MdLayout';
 import demoContainer from 'Common/component/DemoContainer';
 
 import 'style-loader!css-loader!postcss-loader!less-loader!./style/Demo0.less';
 
 const Demo0 = () => {
-    return <LayoutRow className='LayoutRowDemo0' layout-align='start stretch'>
+    return <LayoutColumn className='LayoutColumnDemo0' layout-align='start center'>
         <div className='block1'>block1</div>
         <div className='block2'>block2</div>
         <div className='block3'>block3</div>
-    </LayoutRow>;
+    </LayoutColumn>;
 };
 
 export default demoContainer(Demo0);

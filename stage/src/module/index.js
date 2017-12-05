@@ -53,6 +53,32 @@ let pageList = [
             ],
         }],
     }, {
+        name: 'LayoutColumn',
+        description: 'LayoutColumn控件，通过布局属性转译为class布局样式，转译只影响一级子元素。',
+        path: '/layoutcolumn',
+        demos: [{
+            name: 'Demo0',
+            description: 'LayoutColumn Demo0 description',
+            component: '1_LayoutColumn.Demo0',
+            code: [
+                { name: 'Demo0.js', type: 'js', content: require('raw-loader!./1_LayoutColumn/Demo0.js') },
+                { name: 'Demo0.less', type: 'less', content: require('raw-loader!./1_LayoutColumn/style/Demo0.less') },
+            ],
+        }],
+    }, {
+        name: 'LayoutRow',
+        description: 'LayoutRow控件，通过布局属性转译为class布局样式，转译只影响一级子元素。',
+        path: '/layoutrow',
+        demos: [{
+            name: 'Demo0',
+            description: 'LayoutRow Demo0 description',
+            component: '2_LayoutRow.Demo0',
+            code: [
+                { name: 'Demo0.js', type: 'js', content: require('raw-loader!./2_LayoutRow/Demo0.js') },
+                { name: 'Demo0.less', type: 'less', content: require('raw-loader!./2_LayoutRow/style/Demo0.less') },
+            ],
+        }],
+    }, {
         name: 'Container',
         type: 'subheader',
     }, {
@@ -86,6 +112,8 @@ let componentMap = new Map([
     ['0_LayoutClass.DemoPaddingMargin', require('babel-loader!./0_LayoutClass/DemoPaddingMargin.js').default],
     ['3_LayoutContainer.Demo0', require('babel-loader!./3_LayoutContainer/Demo0.js').default],
     ['3_LayoutContainer.Demo1', require('babel-loader!./3_LayoutContainer/Demo1.js').default],
+    ['1_LayoutColumn.Demo0', require('babel-loader!./1_LayoutColumn/Demo0.js').default],
+    ['2_LayoutRow.Demo0', require('babel-loader!./2_LayoutRow/Demo0.js').default],
 ]);
 
 const createRoutes = (store) => {

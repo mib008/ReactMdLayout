@@ -24,9 +24,7 @@ module.exports = function makeWebpackConfig() {
         'style-loader',
         {
             loader: 'css-loader',
-            options: {
-                sourceMap: true,
-            },
+            options: { sourceMap: true },
         },
         {
             loader: 'postcss-loader',
@@ -66,9 +64,7 @@ module.exports = function makeWebpackConfig() {
                     ...BASE_CSS_LOADER,
                     {
                         loader: 'less-loader',
-                        options: {
-                            sourceMap: true,
-                        },
+                        options: { sourceMap: true },
                     },
                 ],
             }, {

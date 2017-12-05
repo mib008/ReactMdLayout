@@ -1,43 +1,32 @@
 import React, { Component } from 'React';
-
-const HocContainer = (Wrapper) => {
-    return class WrapperComponent extends Component {
-        /**
-         * componentDidMount
-         */
-        componentDidMount() {
-            console.debug('HocContainer did mount');
-        }
-
-        /**
-         * componentWillMount
-         */
-        componentWillMount() {
-            console.debug('HocContainer will mount');
-        }
-
-        /**
-         * componentWillUnmount
-         */
-        componentWillUnmount() {
-            console.debug('HocContainer will unmount');
-        }
-
-        /**
-         * render
-         * @return {dom}
-         */
-        render() {
-            return <Wrapper {...this.props} />;
-        }
-    };
-};
+import HocContainer from './HocContainer/HocContainer1';
 
 @HocContainer
 /**
  * @class
  */
 class MyComponent extends Component {
+    /**
+     * componentDidMount
+     */
+    componentDidMount() {
+        console.debug('MyComponent did mount');
+    }
+
+    /**
+     * componentWillMount
+     */
+    componentWillMount() {
+        console.debug('MyComponent will mount');
+    }
+
+    /**
+     * componentWillUnmount
+     */
+    componentWillUnmount() {
+        console.debug('MyComponent will unmount');
+    }
+
     /**
      * render
      * @return {dom}

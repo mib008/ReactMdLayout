@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import BaseLayout from '../BaseLayout';
 
 /**
  * @class
  */
-class LayoutColumn extends Component {
+class LayoutColumn extends BaseLayout {
     static propTypes = {
         'children': PropTypes.any,
         'className': PropTypes.string,
@@ -15,8 +16,10 @@ class LayoutColumn extends Component {
      * @return {obj}
      */
     render() {
+        let className = 'layout-column'.concat(' ', this.buildClass(this));
+
         return (
-            <div className='layout-column'>
+            <div className={className}>
                 {this.props.children}
             </div>
         );

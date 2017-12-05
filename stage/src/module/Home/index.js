@@ -53,7 +53,7 @@ class Home extends Component {
                     \n-->\
                     \n<link href="angular-material/angular-material.css" rel="stylesheet" />`}
                 </pre>
-                <span>接着，需要简单了解angular-material的布局规则：<a href='https://material.angularjs.org/latest/layout/introduction'>Angular Material Layout</a>。</span>
+                <span>接着，需要简单了解angular-material的布局规则：<a href='https://material.angularjs.org/latest/layout/introduction' target='blank'>Angular Material Layout</a>。</span>
             </section>
             <section>
                 <h3>使用</h3>

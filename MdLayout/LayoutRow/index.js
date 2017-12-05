@@ -13,18 +13,10 @@ class LayoutRow extends BaseLayout {
     };
 
     /**
-     * @constructor
-     * @param {obj} props
-     */
-    constructor(props) {
-        super(props, 'layout-row');
-    }
-
-    /**
      * @return {obj}
      */
     render() {
-        let className = this.buildClass(this);
+        let className = 'layout-row'.concat(' ', this.buildClass(this));
 
         return (
             <div className={className}>

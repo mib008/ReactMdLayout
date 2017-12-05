@@ -19,18 +19,9 @@ class DemoPage extends Component {
     };
 
     /**
-     * @param {object} props
-     */
-    constructor(props) {
-        super(props);
-    }
-
-    /**
      * componentWillMount
      */
     componentWillMount() {
-        console.debug('DemoPage will mount');
-
         if (this.props.location) {
             this.navState = this.props.location.state;
 

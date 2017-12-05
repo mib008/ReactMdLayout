@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import PropTypes from 'prop-types';
 
 const validateAttributeValue = Symbol('validateAttributeValue');
 const findIn = Symbol('findIn');
@@ -18,21 +17,6 @@ const ALIGNMENT_CROSS_AXIS = ['', 'start', 'center', 'end', 'stretch'];
  * @class
  */
 class BaseLayout extends Component {
-    static propTypes = {
-        'className': PropTypes.string,
-        'layout-align': PropTypes.string,
-    };
-
-    /**
-     * @constructor
-     * @param {any} props
-     * @param {string} layoutType
-     */
-    constructor(props, layoutType) {
-        super(props);
-        this.layoutType = layoutType;
-    }
-
     /**
      * For the Layout attribute value, validate or replace with default
      * fallback value
@@ -166,11 +150,9 @@ class BaseLayout extends Component {
      * @return {string} className
      */
     buildClass(child) {
-        if (!child || child.$$typeof !== Symbol.for('react.element')) return '';
+        if (!child) return '';
 
-        return this[translateClassName](
-            child.props,
-            ([key, value]) => key.startsWith('layout') || key.startsWith('flex'));
+        return this[translateClassName](child.props, ([key, value]) => key.startsWith('layout') || key.startsWith('flex'));
     }
 
     /**

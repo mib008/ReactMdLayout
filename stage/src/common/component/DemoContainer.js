@@ -46,29 +46,6 @@ const DemoContainer = (Wrapper) => {
         }
 
         /**
-         * componentWillMount
-         */
-        componentWillMount() {
-            // let Component = componentMap.get(this.props.component);
-            // this.demoComponent = new Component();
-            console.debug('HOC will mount');
-        }
-
-        /**
-         * componentDidMount
-         */
-        componentDidMount() {
-            console.debug('HOC did mount');
-        }
-
-        /**
-         * componentWillUnmount
-         */
-        componentWillUnmount() {
-            console.debug('HOC will unmount');
-        }
-
-        /**
          * componentDidUpdate
          * @param {any} prevProps
          * @param {any} prevState
