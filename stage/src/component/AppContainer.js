@@ -14,7 +14,7 @@ import RouterDefines from '../module';
 import defaultTheme from 'Common/defaultTheme';
 import Github from 'Common/svg/Github';
 
-import './style/AppContainer.less';
+import './AppContainer.less';
 
 /**
  * @class

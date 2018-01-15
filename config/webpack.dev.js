@@ -71,7 +71,7 @@ module.exports = function (options) {
             new webpack.DefinePlugin({
                 '__DEV__': true
             }),
-            
+
             // only development
             // Hot Module Replacement(HMR), in most cases no options are necessary.
             // @see: https://webpack.js.org/plugins/hot-module-replacement-plugin/

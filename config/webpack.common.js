@@ -92,8 +92,8 @@ module.exports = function makeWebpackConfig() {
             'Stage': path.resolve('stage'),
             'MdLayout': path.resolve('MdLayout'),
             'BaseLess': path.resolve('stage/src/common/style/baseLess/'),
-            'angular-material.css': path.resolve('stage/lib/angular-material/angular-material.css'),
 
+            'angular-material.css': path.resolve('stage/lib/angular-material/angular-material.css'),
             'angular-material': path.resolve('stage/lib/angular-material'),
 
             // 'material-ui': 'material-ui-alpha/build',
@@ -118,7 +118,6 @@ module.exports = function makeWebpackConfig() {
     config.plugins = [
         new webpack.ProvidePlugin({}),
     ];
-
 
     //config.performance = {
     //    // in development, we don't split code. So, close it.

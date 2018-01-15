@@ -16,7 +16,7 @@ import Divider from 'material-ui/Divider';
 // import InboxIcon from 'material-ui-icons/Inbox';
 // import DraftsIcon from 'material-ui-icons/Drafts';
 
-import './style/Navbar.less';
+import './Navbar.less';
 
 const buildState = Symbol('buildState');
 
