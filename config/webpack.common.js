@@ -97,7 +97,7 @@ module.exports = function makeWebpackConfig() {
             'angular-material': path.resolve('stage/lib/angular-material'),
 
             // 'material-ui': 'material-ui-alpha/build',
-            'material-ui': 'material-ui-build-next/build',
+            // 'material-ui': 'material-ui-build-next/build',
             // 'material-ui/styles': 'material-ui-alpha/styles',
 
             'package.json': path.resolve('package.json'),

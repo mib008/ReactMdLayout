@@ -123,7 +123,7 @@ const createRoutes = (store) => {
         { path: '/', name: 'Home', component: Home, exact: true, strict: true },
         { path: '/about', name: 'About', component: About },
         { key: 1, type: 'divider' },
-        { path: '/button', name: 'Button', component: require('babel-loader!./Button').default, description: '仅用于测试的页面' },
+        // { path: '/button', name: 'Button', component: require('babel-loader!./Button').default, description: '仅用于测试的页面' },
         // { path: '/layout_column', name: 'Layout Column', component: LayoutColumn },
         // { path: '/layout_row', name: 'Layout Row', component: LayoutRow },
         // { path: '/Layout', name: 'Layout', component: Layout },
