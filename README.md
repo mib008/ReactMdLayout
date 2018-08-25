@@ -47,3 +47,14 @@ angular-material.layouts.ie_fixes.css这个是为了IE浏览器的兼容，按�
 ## Document Site
 
 http://reactmdlayout.chinacloudsites.cn/
+
+## 关于Git仓库内容的说明
+
+npm start / npm run server:
+启动Document Site站点，对ReactMDlayout组件的修改，添加相应的Demo页面会显示在这个站点中。
+
+npm run build:
+构建打包Document Site站点
+
+npm run publish:
+构建打包ReactMDlayout组件库
