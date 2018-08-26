@@ -15,16 +15,26 @@ class DemoPage extends Component {
     };
 
     /**
-     * componentWillMount
+     * @constructor
+     * @param {any} props
      */
-    componentWillMount() {
-        if (this.props && this.props.location) {
-            this.navState = this.props.location.state;
+    constructor(props) {
+        super(props);
+
+        if (props && props.location) {
+            this.navState = props.location.state;
 
             if (!this.navState) {
                 this.navState = window.history.state;
             }
         }
+    }
+
+    /**
+     * componentDidMount
+     */
+    componentDidMount() {
+
     }
 
     /**

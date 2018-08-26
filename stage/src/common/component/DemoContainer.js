@@ -42,14 +42,6 @@ class DemoContainer extends Component {
     }
 
     /**
-     * componentWillMount
-     */
-    componentWillMount() {
-        // let Component = componentMap.get(this.props.component);
-        // this.demoComponent = new Component();
-    }
-
-    /**
      * componentDidUpdate
      * @param {any} prevProps
      * @param {any} prevState

@@ -29,6 +29,20 @@ class Navbar extends Component {
     };
 
     /**
+     * @constructor
+     * @param {any} props
+     */
+    constructor(props) {
+        super(props);
+
+        props.itemSource.forEach((page) => {
+            if (page.demos && page.path === window.location.pathname) {
+                window.history.pushState(this[buildState](page), page.name, page.path);
+            }
+        });
+    }
+
+    /**
      * buildState
      * @param {obj} page
      * @return {obj}
@@ -40,17 +54,6 @@ class Navbar extends Component {
             path: page.path,
             demos: page.demos,
         };
-    }
-
-    /**
-     * componentWillMount
-     */
-    componentWillMount() {
-        this.props.itemSource.forEach((page) => {
-            if (page.demos && page.path === window.location.pathname) {
-                window.history.pushState(this[buildState](page), page.name, page.path);
-            }
-        });
     }
 
     /**
