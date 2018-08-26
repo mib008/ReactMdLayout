@@ -61,6 +61,7 @@
     <Folder Include="stage\src\module\PageNotFound\components\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="README.md" />
     <Content Include="stage\src\common\component\style\DemoContainer.less" />
     <Content Include="stage\src\common\component\style\StagePage.less" />
     <Content Include="stage\src\common\defaultTheme.json" />
