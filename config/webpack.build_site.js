@@ -38,9 +38,7 @@ const BASE_CSS_LOADER = [
  */
 module.exports = function (options) {
 
-    console.log("outputPath : " + outputPath);
-
-    var outputPath = path.join(__dirname, '../dist');
+    var outputPath = path.join(__dirname, '../site_dist');
 
     console.log("outputPath : " + outputPath);
 

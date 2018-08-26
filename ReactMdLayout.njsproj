@@ -82,8 +82,8 @@
     <Content Include="stage\src\module\PageNotFound\components\PageNotFound.scss" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="config\webpack.publish.js" />
-    <Compile Include="config\webpack.build.js" />
+    <Compile Include="config\webpack.build_component.js" />
+    <Compile Include="config\webpack.build_site.js" />
     <Compile Include="config\webpack.common.js" />
     <Compile Include="config\webpack.dev.js" />
     <Compile Include="MdLayout\BaseLayout.js" />

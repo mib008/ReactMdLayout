@@ -28,9 +28,7 @@ const BASE_CSS_LOADER = [
  */
 module.exports = function(options) {
 
-    console.log("outputPath : " + outputPath);
-
-    var outputPath = path.join(__dirname, '../publish');
+    var outputPath = path.join(__dirname, '../dist');
 
     console.log("outputPath : " + outputPath);
 
