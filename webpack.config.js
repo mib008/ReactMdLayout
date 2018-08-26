@@ -9,11 +9,11 @@ console.log("process.env.npm_lifecycle_event = " + process.env.npm_lifecycle_eve
 
 switch (process.env.npm_lifecycle_event) {
     case 'prod':
-    case 'build':
-        module.exports = require('./config/webpack.build')();
+    case 'build_site':
+        module.exports = require('./config/webpack.build_site')();
         break;
-    case 'publish':
-        module.exports = require('./config/webpack.publish')();
+    case 'build_component':
+        module.exports = require('./config/webpack.build_component')();
         break;
     case 'dev':
     case 'development':

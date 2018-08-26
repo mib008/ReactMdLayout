@@ -12,16 +12,79 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Content Include="package.json" />
+    <Folder Include="dist\" />
+    <Folder Include="config\" />
+    <Folder Include="config\dist\" />
+    <Folder Include="config\publish\" />
+    <Folder Include="MdLayout\" />
+    <Folder Include="MdLayout\LayoutRow\" />
+    <Folder Include="MdLayout\LayoutColumn\" />
+    <Folder Include="MdLayout\Layout\" />
+    <Folder Include="MdLayout\LayoutContainer\" />
+    <Folder Include="stage\" />
+    <Folder Include="stage\src\" />
+    <Folder Include="stage\src\common\" />
+    <Folder Include="stage\src\common\component\" />
+    <Folder Include="stage\src\common\component\style\" />
+    <Folder Include="stage\src\common\svg\" />
+    <Folder Include="stage\src\common\style\" />
+    <Folder Include="stage\src\common\style\baseLess\" />
+    <Folder Include="stage\src\component\style\" />
+    <Folder Include="stage\src\container\" />
+    <Folder Include="stage\src\component\" />
+    <Folder Include="stage\src\component\Header\" />
+    <Folder Include="stage\src\layouts\" />
+    <Folder Include="stage\src\layouts\CoreLayout\" />
+    <Folder Include="stage\src\module\" />
+    <Folder Include="stage\src\module\0_LayoutClass\style\" />
+    <Folder Include="stage\src\module\0_Layout\" />
+    <Folder Include="stage\src\module\0_Layout\style\" />
+    <Folder Include="stage\src\module\3_LayoutContainer\" />
+    <Folder Include="stage\src\module\2_LayoutRow\" />
+    <Folder Include="stage\src\module\2_LayoutRow\style\" />
+    <Folder Include="stage\src\module\3_LayoutContainer\style\" />
+    <Folder Include="stage\src\module\Button\style\" />
+    <Folder Include="stage\src\module\Home\" />
+    <Folder Include="stage\src\module\Home\assets\" />
+    <Folder Include="stage\src\module\Home\components\" />
+    <Folder Include="stage\src\module\Button\" />
+    <Folder Include="stage\src\module\1_LayoutColumn\" />
+    <Folder Include="stage\src\module\Home\style\" />
+    <Folder Include="stage\src\module\0_LayoutClass\" />
+    <Folder Include="stage\src\module\PageNotFound\" />
+    <Folder Include="stage\src\module\PageNotFound\assets\" />
+    <Folder Include="stage\src\module\PageNotFound\components\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="README.md" />
-    <Compile Include="postcss.config.js" />
-    <Compile Include="server.js" />
-    <Compile Include="webpack.config.js" />
-    <Compile Include="config\webpack.build.js" />
+    <Content Include="stage\src\common\component\style\DemoContainer.less" />
+    <Content Include="stage\src\common\component\style\StagePage.less" />
+    <Content Include="stage\src\common\defaultTheme.json" />
+    <Content Include="stage\src\common\style\baseLess\x.less" />
+    <Content Include="stage\src\common\style\baseStyle.less" />
+    <Content Include="stage\src\component\Header\Header.scss" />
+    <Content Include="stage\src\component\style\Navbar.less" />
+    <Content Include="stage\src\layouts\CoreLayout\CoreLayout.scss" />
+    <Content Include="stage\src\module\0_LayoutClass\style\Demo0.less" />
+    <Content Include="stage\src\module\0_LayoutClass\style\Demo1.less" />
+    <Content Include="stage\src\module\0_Layout\style\Demo0.less" />
+    <Content Include="stage\src\module\2_LayoutRow\style\Demo0.less" />
+    <Content Include="stage\src\module\3_LayoutContainer\style\Demo0.less" />
+    <Content Include="stage\src\module\3_LayoutContainer\style\Demo1.less" />
+    <Content Include="stage\src\module\Home\assets\Duck.jpg" />
+    <Content Include="stage\src\module\Home\components\HomeView.scss" />
+    <Content Include="stage\src\module\Home\style\index.less" />
+    <Content Include="stage\src\module\PageNotFound\assets\404.jpg" />
+    <Content Include="stage\src\module\PageNotFound\components\PageNotFound.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config\webpack.build_component.js" />
+    <Compile Include="config\webpack.build_site.js" />
     <Compile Include="config\webpack.common.js" />
     <Compile Include="config\webpack.dev.js" />
     <Compile Include="config\webpack.publish.js" />
