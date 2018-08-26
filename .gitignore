@@ -8,3 +8,5 @@ node_modules
 /.vs/ReactMdLayout/v15/.suo
 /site_dist
 /.vs/config/applicationhost.config
+
+node_modules\.rar

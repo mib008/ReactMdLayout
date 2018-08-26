@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Radio, { RadioGroup } from 'material-ui/Radio';
-import { FormLabel, FormControl, FormControlLabel } from 'material-ui/Form';
+// import Radio, { RadioGroup } from 'material-ui/Radio';
+import { FormLabel, FormControl, FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
 
 import './InteractiveDemo.less';
 
@@ -9,31 +9,32 @@ const buildForm = Symbol('buildForm');
 const buildClass = Symbol('buildClass');
 
 const dataDefine = {
-    formDefine: [{
-        key: 'direction', displayName: 'Layout Direction', itemSource: [
-            { key: 'row', value: 'layout-row' },
-            { key: 'column', value: 'layout-column' },
-        ],
-    },
-    {
-        key: 'justify', displayName: 'Alignment in Layout Direction (vertical)', itemSource: [
-            { key: 'none', value: 'default' },
-            { key: 'start (default)', value: 'start' },
-            { key: 'center', value: 'center' },
-            { key: 'end', value: 'end' },
-            { key: 'space-around', value: 'space-around' },
-            { key: 'space-between', value: 'space-between' },
-        ],
-    },
-    {
-        key: 'alignItems', displayName: 'Alignment in Perpendicular Direction (horizontal)', itemSource: [
-            { key: 'none', value: 'default' },
-            { key: 'start', value: 'start' },
-            { key: 'center', value: 'center' },
-            { key: 'end', value: 'end' },
-            { key: 'stretch (default)', value: 'stretch' },
-        ],
-    },
+    formDefine: [
+        {
+            key: 'direction', displayName: 'Layout Direction', itemSource: [
+                { key: 'row', value: 'layout-row' },
+                { key: 'column', value: 'layout-column' },
+            ],
+        },
+        {
+            key: 'justify', displayName: 'Alignment in Layout Direction (vertical)', itemSource: [
+                { key: 'none', value: 'default' },
+                { key: 'start (default)', value: 'start' },
+                { key: 'center', value: 'center' },
+                { key: 'end', value: 'end' },
+                { key: 'space-around', value: 'space-around' },
+                { key: 'space-between', value: 'space-between' },
+            ],
+        },
+        {
+            key: 'alignItems', displayName: 'Alignment in Perpendicular Direction (horizontal)', itemSource: [
+                { key: 'none', value: 'default' },
+                { key: 'start', value: 'start' },
+                { key: 'center', value: 'center' },
+                { key: 'end', value: 'end' },
+                { key: 'stretch (default)', value: 'stretch' },
+            ],
+        },
     ],
 };
 
@@ -78,7 +79,6 @@ class InteractiveDemo extends Component {
     }
 
     /**
-     * 
      * @param {any} param0
      * @return {string}
      */
@@ -107,7 +107,7 @@ class InteractiveDemo extends Component {
             <div className='container flex-80 layout-column'>
                 <span className='layout-padding'>{`Layout class: ${layoutClass}`}</span>
                 <div className='content flex'>
-                    <div className={ `dynamic-layout ${layoutClass}` }>
+                    <div className={`dynamic-layout ${layoutClass}`}>
                         <div className='layout-padding layout-margin' style={{ padding: '10px' }}>Cell 1</div>
                         <div className='layout-padding layout-margin' style={{ padding: '20px' }}>Cell 2</div>
                         <div className='layout-padding layout-margin' style={{ padding: '30px' }}>Cell 3</div>

@@ -87,7 +87,6 @@
     <Compile Include="config\webpack.build_site.js" />
     <Compile Include="config\webpack.common.js" />
     <Compile Include="config\webpack.dev.js" />
-    <Compile Include="config\webpack.publish.js" />
     <Compile Include="MdLayout\BaseLayout.js" />
     <Compile Include="MdLayout\index.js" />
     <Compile Include="publish\ReactMdLayout.js" />

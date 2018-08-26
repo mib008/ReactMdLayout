@@ -66,7 +66,7 @@ class AppContainer extends Component {
 
                             <div className='layout-column flex'>
                                 <AppBar position="static" color="default">
-                                    <Toolbar>
+                                    <Toolbar style={{ backgroundColor: 'transparent' }}>
                                         <div className='flex' />
                                         <IconButton className='icon' color="contrast" aria-label="Github" target="_blank" href='https://github.com/mib008/ReactMdLayout'>
                                             <Github height={36} width={36} />

@@ -1,25 +1,11 @@
 import React, { Component } from 'React';
 import HocContainer from './HocContainer/HocContainer1';
 
-@HocContainer
 /**
  * @class
  */
+@HocContainer
 class MyComponent extends Component {
-    /**
-     * componentDidMount
-     */
-    componentDidMount() {
-        console.debug('MyComponent did mount');
-    }
-
-    /**
-     * componentWillMount
-     */
-    componentWillMount() {
-        console.debug('MyComponent will mount');
-    }
-
     /**
      * componentWillUnmount
      */

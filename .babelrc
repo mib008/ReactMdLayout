@@ -1,17 +1,24 @@
 {
   "presets": ["env", "react", "stage-0"],
   "sourceMaps": true,
-  "plugins": [
+    "plugins":
     [
-        "import",
-        {
-            "libraryName": "material-ui",
-            "libraryDirectory": "components",
-            "camel2DashComponentName": false,
-        }
-    ],
-    "react-hot-loader/babel",
-    "transform-decorators-legacy",
-    ["transform-class-properties", { "loose": true }]
-  ]
+
+        [
+            "import",
+            {
+                "libraryName": "material-ui",
+                "libraryDirectory": "components",
+                "camel2DashComponentName": false
+            }
+        ],
+        "react-hot-loader/babel",
+        "transform-decorators-legacy",
+        [
+            "transform-class-properties",
+            {
+                "loose": true
+            }
+        ]
+    ]
  }

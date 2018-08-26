@@ -1,5 +1,5 @@
 // import { createMuiTheme, createBreakpoints } from 'material-ui/styles';
-import { createMuiTheme } from 'material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 import defaultTheme from './defaultTheme.json';
 

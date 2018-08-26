@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import List, { ListItem, ListItemText } from 'material-ui/List';
+import { List, ListItem, ListItemText } from '@material-ui/core';
 import packageJson from 'package.json';
 
 // import { withStyles } from 'material-ui/styles';
@@ -8,7 +8,7 @@ import packageJson from 'package.json';
 
 // import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import ListSubheader from 'material-ui/List/ListSubheader';
+import ListSubheader from '@material-ui/core/ListSubheader';
 
 // import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 // import List from 'material-ui/List';
@@ -69,24 +69,28 @@ class Navbar extends Component {
                 <List>
                     <ListItem className='layout-column'>
                         <h3>ReactMdLayout</h3>
-                        <h4>version:{packageJson.version}</h4>
+                        <h4>{`version:${packageJson.version}`}</h4>
                     </ListItem>
 
-                    {itemSource.map((module) => {
-                        switch (module.type) {
-                            case 'divider':
-                                return <Divider key={module.key} />;
-                            case 'subheader':
-                                return <ListSubheader className='ListSubheader' key={module.name}>{module.name}</ListSubheader>;
-                            default:
-                                return <NavLink to={{
-                                    pathname: module.path,
-                                    state: this[buildState](module),
-                                }} key={module.name} activeStyle={{ color: 'white' }}>
-                                    <ListItem button><ListItemText primary={module.name}></ListItemText></ListItem>
-                                </NavLink>;
-                        }
-                    })}
+                    {
+                        itemSource.map((module) => {
+                            switch (module.type) {
+                                case 'divider':
+                                    return <Divider key={module.key} />;
+                                case 'subheader':
+                                    return <ListSubheader className='ListSubheader' key={module.name}>{module.name}</ListSubheader>;
+                                default:
+                                    return <NavLink to={{
+                                        pathname: module.path,
+                                        state: this[buildState](module),
+                                    }} key={module.name} activeStyle={{ color: 'white' }}>
+                                        <ListItem button={true}>
+                                            <ListItemText primary={module.name}></ListItemText>
+                                        </ListItem>
+                                    </NavLink>;
+                            }
+                        })
+                    }
                 </List>
             </div>
         );

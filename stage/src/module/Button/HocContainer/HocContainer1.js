@@ -10,13 +10,6 @@ const HocContainer = (Wrapper) => {
         }
 
         /**
-         * componentWillMount
-         */
-        componentWillMount() {
-            console.debug('HocContainer1 will mount');
-        }
-
-        /**
          * componentWillUnmount
          */
         componentWillUnmount() {
