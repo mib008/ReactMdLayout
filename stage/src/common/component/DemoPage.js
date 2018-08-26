@@ -31,13 +31,6 @@ class DemoPage extends Component {
     }
 
     /**
-     * componentDidMount
-     */
-    componentDidMount() {
-
-    }
-
-    /**
      * @param {any} componentKey
      * @return {dom}
      */

@@ -26,7 +26,7 @@ const BASE_CSS_LOADER = [
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
-module.exports = function(options) {
+module.exports = function (options) {
 
     var outputPath = path.join(__dirname, '../dist');
 
@@ -115,7 +115,7 @@ module.exports = function(options) {
                         pure_funcs: ['console.debug'],
                     },
                 }
-            }),            
+            }),
 
             // Copy assets from the public folder
             // Reference: https://github.com/kevlened/copy-webpack-plugin
@@ -124,10 +124,11 @@ module.exports = function(options) {
                     {
                         from: path.join(__dirname, './publish/**/*.*'),
                         force: true,
+                        context: 'config/publish',
                         to: path.join(outputPath)
                     }
                 ])
-            ),
+
         ]
 
     });

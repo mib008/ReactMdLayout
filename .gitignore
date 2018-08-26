@@ -4,6 +4,7 @@
 
 node_modules
 
-dist
 .idea/
 /.vs/ReactMdLayout/v15/.suo
+/site_dist
+/.vs/config/applicationhost.config
